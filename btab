@@ -1,0 +1,21 @@
+#! /bin/bash
+
+File=''
+Riff=''
+Measure=''
+Strings=''
+
+while getopts ":hf:m:s:r:" option; do
+   case "${option}" in
+    h)
+      python src/main.py -h
+      exit 1
+      ;;
+    f) File="$OPTARG";;
+    r) Riff="$OPTARG";;
+    m) Measure=$OPTARG;;
+    s) Strings=$OPTARG;;
+  esac
+done
+
+python src/main.py -f "$File" -r "$Riff" -m "$Measure" -s "$Strings"

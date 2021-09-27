@@ -1,10 +1,26 @@
 # Riff Memo (pytab)
 
-run with python for now
+run with python or with bash script
 ```
-python src/main.py
+python src/main.py 
+
+./btab 
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --riff RIFF, -r RIFF  "E 1 2 4"
+  --file FILE, -f FILE  /path/to/riff.riff
+  --measure MEASURE, -m MEASURE
+                        The measure length
+  --strings STRINGS, -s STRINGS
+                        The number of strings
 
 ```
+## File Parsing
+You can pass a file with the -f (--file) option. The files first line is the `strings` value and the second is the `measure` value. All subsequent lines are parsed into the `riff`. This is a good way to recreate output as well as do line by line riffs to keep track of longer runs.
+
+## Interactive Mode
+If you do not pass a file, you can set the parameters for the riff interactively.
 
 Enter the number of strings (default 6 - supports 4,5,6,7).
 
